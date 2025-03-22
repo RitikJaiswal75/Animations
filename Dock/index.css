@@ -35,8 +35,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1) ease-in-out;
-    transition-duration: 100ms;
+    transition: all cubic-bezier(0.25, 1, 0.5, 1) ease-in-out;
+    transition-duration: 200ms;
 }
 
 .icon-container:last-child {
