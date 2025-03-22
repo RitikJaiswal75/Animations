@@ -44,3 +44,14 @@
 .icon:hover {
     scale: 120%
 }
+
+@media (max-width: 639px) {
+    .dock {
+        flex-direction: column;
+        inset-inline: unset;
+    }
+
+    .icon {
+        padding: 0.5rem 0.6rem;
+    }
+}
