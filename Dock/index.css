@@ -52,21 +52,21 @@
     width: 80px;
     height: 80px;
     font-size: 2rem;
-    margin-top: -60px;
+    margin-top: -20px;
 }
 
 .icon-container:hover + .icon-container {
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
-    margin-top: -40px;
+    margin-top: -10px;
 }
 
 .icon-container:has(+ .icon-container:hover) {
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
-    margin-top: -40px;
+    margin-top: -10px;
 }
 
 @media (max-width: 639px) {
