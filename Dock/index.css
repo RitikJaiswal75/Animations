@@ -18,7 +18,6 @@
     padding: 0 8px;
     bottom: 1rem;
     margin: 0 auto;
-    font-size: 1.5rem;
     line-height: calc(2 / 1.5)rem;
     color: white;
     border-radius: calc(infinity * 1px);
@@ -26,19 +25,18 @@
     justify-content: center;
     align-items: center;
     width: max-content;
-    height: 90px
+    height: 65px
 }
 
 .icon-container {
     padding-right: 8px;
-    font-size: 40px;
+    font-size: 20px;
     transition-property: all;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition-property: all;
-    transition-duration: 400ms;
-    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1) ease-in-out;
+    transition-duration: 100ms;
 }
 
 .icon-container:last-child {
@@ -52,28 +50,28 @@
 }
 
 .icon-container:hover {
-    font-size: 64px;
+    font-size: 40px;
     margin-top: -30px;
 }
 
 .icon-container:hover + .icon-container {
-    font-size: 56px;
+    font-size: 30px;
     margin-top: -10px;
 }
 
 .icon-container:hover + .icon-container + .icon-container {
-    font-size: 48px;
+    font-size: 25px;
     margin-top: -6px;
 }
 
 
 .icon-container:has(+ .icon-container:hover) {
-    font-size: 56px;
+    font-size: 30px;
     margin-top: -10px;
 }
 
 .icon-container:has(+ .icon-container + .icon-container:hover) {
-    font-size: 48px;
+    font-size: 25px;
     margin-top: -6px;
 }
 
