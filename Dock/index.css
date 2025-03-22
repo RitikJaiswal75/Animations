@@ -15,7 +15,7 @@
     background-color: var(--colors-gray1);
     position: fixed;
     inset-inline: 0;
-    padding: .4rem;
+    padding: 0 8px;
     bottom: 1rem;
     margin: 0 auto;
     font-size: 1.5rem;
@@ -26,12 +26,12 @@
     justify-content: center;
     align-items: center;
     width: max-content;
-    height: 60px
+    height: 90px
 }
 
 .icon-container {
-    padding: .3rem;
-    font-size: 1rem;
+    padding-right: 8px;
+    font-size: 40px;
     transition-property: all;
     display: flex;
     align-items: center;
@@ -41,6 +41,10 @@
     transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+.icon-container:last-child {
+    padding-right: unset;
+}
+
 .icon {
     padding: 1rem;
     border-radius: calc(infinity * 1px);
@@ -48,28 +52,28 @@
 }
 
 .icon-container:hover {
-    font-size: 3rem;
+    font-size: 64px;
     margin-top: -30px;
 }
 
 .icon-container:hover + .icon-container {
-    font-size: 2rem;
+    font-size: 56px;
     margin-top: -10px;
 }
 
 .icon-container:hover + .icon-container + .icon-container {
-    font-size: 1.5rem;
+    font-size: 48px;
     margin-top: -6px;
 }
 
 
 .icon-container:has(+ .icon-container:hover) {
-    font-size: 2rem;
+    font-size: 56px;
     margin-top: -10px;
 }
 
 .icon-container:has(+ .icon-container + .icon-container:hover) {
-    font-size: 1.5rem;
+    font-size: 48px;
     margin-top: -6px;
 }
 
