@@ -54,12 +54,12 @@ export default function AppIcon({
             style={{ x: xSpring, scale: scaleSpring, y }}
             onClick={() => {
               animate(y, [0, -40, 0], {
-                repeat: 2,
+                repeat: 0,
                 ease: [
                   [0, 0, 0.2, 1],
                   [0.8, 0, 1, 1],
                 ],
-                duration: 0.7,
+                duration: 0.2,
               });
             }}
             className="aspect-square w-10 rounded-full icon-bg shadow origin-bottom text-gray-700 text-2xl flex items-center justify-center"
