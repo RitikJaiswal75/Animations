@@ -11,20 +11,20 @@ const SearchResult = ({ api, index }: SearchResultProps) => {
   return (
     <div
       key={`${api.path}-${index}`}
-      className="text-search-text relative flex w-full items-center justify-between px-2 py-3 transition-colors duration-500 ease-in-out hover:bg-slate-200"
+      className="text-search-text relative flex w-full items-center justify-between px-2 py-3 transition-colors duration-500 ease-in-out hover:bg-slate-50"
       onMouseEnter={() => setShowMoreMenu(true)}
       onMouseLeave={() => setShowMoreMenu(false)}
     >
       <div className="flex gap-1">
         {showTags ? (
           <div
-            className="flex flex-shrink-0 items-center justify-center gap-0.5 bg-slate-300 px-1 whitespace-nowrap transition-colors duration-150"
+            className="flex flex-shrink-0 items-center justify-center gap-0.5 bg-slate-100 px-1 whitespace-nowrap transition-colors duration-150"
             ref={(el) => {
               if (showMoreMenu) {
-                el?.classList.remove("bg-slate-200");
+                el?.classList.remove("bg-slate-100");
                 el?.classList.add("bg-white");
               } else {
-                el?.classList.add("bg-slate-200");
+                el?.classList.add("bg-slate-100");
                 el?.classList.remove("bg-white");
               }
             }}
