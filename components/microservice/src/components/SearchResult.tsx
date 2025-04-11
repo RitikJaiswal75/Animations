@@ -15,12 +15,12 @@ const SearchResult = ({ api, index }: SearchResultProps) => {
       <div className="line-clamp-2 w-[85%] break-all">{api.path}</div>
       <div className="flex h-4 w-[15%] flex-col items-end justify-center overflow-hidden">
         <img
-          className="ease-out-quad absolute h-4 w-4 cursor-pointer rounded-sm px-1 transition-opacity duration-300"
+          className="absolute h-6 w-6 cursor-pointer rounded-sm px-1 transition-opacity duration-300 ease-in"
           style={{ opacity: showMoreMenu ? 1 : 0 }}
           src={addIcon}
         />
         <img
-          className="ease-out-quad absolute cursor-pointer transition-opacity duration-300"
+          className="absolute cursor-pointer transition-opacity duration-300 ease-in"
           style={{ opacity: showMoreMenu ? 0 : 1 }}
           src={getApiTypeIcon(api.type)}
         />

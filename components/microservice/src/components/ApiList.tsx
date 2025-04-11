@@ -1,29 +1,39 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ApiListProps } from "../types/apiListProps";
 import { getApiTypeIcon } from "../utils/iconEngine";
 import moreMenuIcon from "../assets/icons/dots-horizontal.svg";
+import Tags from "./Tags";
 
 const ApiList = ({ data }: ApiListProps) => {
   const [showMoreMenu, setShowMoreMenu] = useState(false);
-  return (
-    <div
-      className="border-1 relative flex w-full items-center justify-between rounded-sm border-slate-400 bg-white px-2 py-3 text-xs"
-      onMouseEnter={() => setShowMoreMenu(true)}
-      onMouseLeave={() => setShowMoreMenu(false)}
-    >
-      <div className="line-clamp-2 w-[85%] break-all">{data.path}</div>
-      <div className="flex h-4 w-[15%] flex-col items-end justify-center overflow-hidden">
-        <img
-          className="ease-out-quad absolute h-4 w-4 cursor-pointer rounded-sm bg-slate-100 px-1 transition-opacity duration-300"
-          style={{ opacity: showMoreMenu ? 1 : 0 }}
-          src={moreMenuIcon}
-        />
+  const container = useRef<HTMLDivElement>(null);
 
-        <img
-          className="ease-out-quad absolute cursor-pointer transition-opacity duration-300"
-          style={{ opacity: showMoreMenu ? 0 : 1 }}
-          src={getApiTypeIcon(data.type)}
-        />
+  return (
+    <div className="relative flex w-[240px] overflow-hidden rounded-sm border-1 border-slate-200 text-xs">
+      <div
+        ref={container}
+        // ${translate ? "-translate-x-10" : "translate-x-0"}
+        className={`flex w-full items-center justify-between rounded-sm bg-white px-2 py-3`}
+        onMouseEnter={() => setShowMoreMenu(true)}
+        onMouseLeave={() => setShowMoreMenu(false)}
+      >
+        <div className="flex w-[85%] gap-2">
+          <div className="flex-shrink-0">
+            <Tags tagData={data.tags || []} />
+          </div>
+          <div className="line-clamp-2 flex-1 break-all">{data.path}</div>
+        </div>
+        <div className="relative flex w-[15%] items-center justify-end">
+          {showMoreMenu ? (
+            <img
+              className="rounded-xs hover:bg-slate-200"
+              src={moreMenuIcon}
+              alt="More menu icon"
+            />
+          ) : (
+            <img className="" src={getApiTypeIcon(data.type)} alt="" />
+          )}
+        </div>
       </div>
     </div>
   );
