@@ -16,7 +16,7 @@ const ApiList = ({ data }: ApiListProps) => {
     <div className="relative flex w-[240px] overflow-hidden rounded-sm border-1 border-slate-200 bg-slate-300 text-xs">
       <div
         ref={container}
-        className={`flex w-full flex-shrink-0 items-center justify-between rounded-sm bg-white px-2 py-3 transition-transform duration-300 ease-in-out ${translate ? "-translate-x-6" : "translate-x-0"}`}
+        className={`flex w-full flex-shrink-0 items-center justify-between rounded-sm bg-white px-2 py-3 transition-transform duration-300 ease-in-out ${translate ? "-translate-x-11" : "translate-x-0"}`}
         onMouseEnter={() => setShowMoreMenu(true)}
         onMouseLeave={() => setShowMoreMenu(false)}
       >
@@ -48,11 +48,14 @@ const ApiList = ({ data }: ApiListProps) => {
       </div>
       <div
         className={`flex items-center justify-center px-0.5 transition-transform duration-300 ease-in-out ${
-          translate ? "-translate-x-6" : "translate-x-0"
+          translate ? "-translate-x-11" : "translate-x-0"
         }`}
       >
         <div className="flex h-5 w-5 items-center justify-center rounded-xs p-1 hover:bg-slate-100">
           <img src={pinIcon} alt="" className="" />
+        </div>
+        <div className="flex h-5 w-5 items-center justify-center rounded-xs p-1 hover:bg-slate-100">
+          <img src={moreMenuIcon} alt="" className="" />
         </div>
       </div>
     </div>
