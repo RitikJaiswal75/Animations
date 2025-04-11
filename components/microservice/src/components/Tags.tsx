@@ -1,5 +1,6 @@
 import { TagProps } from "../types/tagProps";
 import qpsIcon from "../assets/icons/qps.svg";
+import qpmIcon from "../assets/icons/qpm.svg";
 import Triangle from "./icons/Triangle";
 
 const Tags = ({ tagData }: TagProps) => {
@@ -11,7 +12,12 @@ const Tags = ({ tagData }: TagProps) => {
           className="flex h-4 items-center justify-center gap-0.5 bg-slate-100 py-0.5 pl-1 text-xs text-slate-600"
         >
           <div className="flex items-center justify-center gap-0.5 whitespace-nowrap">
-            24 <img src={qpsIcon} alt="" className="inline-block" />
+            24{" "}
+            <img
+              src={(index + 1) % 2 === 0 ? qpmIcon : qpsIcon}
+              alt=""
+              className="inline-block"
+            />
           </div>
           <div
             className={`${

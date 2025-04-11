@@ -7,15 +7,15 @@ import useStore from "./Store/store";
 
 const ApiList = ({ data }: ApiListProps) => {
   const [showMoreMenu, setShowMoreMenu] = useState(false);
+  const [translate, setTranslate] = useState(false);
   const { showTags } = useStore();
   const container = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="relative flex w-[240px] overflow-hidden rounded-sm border-1 border-slate-200 text-xs">
+    <div className="relative flex w-[240px] overflow-hidden rounded-sm border-1 border-slate-200 bg-slate-300 text-xs transition-all duration-300 ease-in">
       <div
         ref={container}
-        // ${translate ? "-translate-x-10" : "translate-x-0"}
-        className={`flex w-full items-center justify-between rounded-sm bg-white px-2 py-3`}
+        className={`flex w-full flex-shrink-0 items-center justify-between rounded-sm bg-white px-2 py-3 ${translate ? "-translate-x-10" : "translate-x-0"}`}
         onMouseEnter={() => setShowMoreMenu(true)}
         onMouseLeave={() => setShowMoreMenu(false)}
       >
@@ -33,11 +33,21 @@ const ApiList = ({ data }: ApiListProps) => {
               className="rounded-xs hover:bg-slate-200"
               src={moreMenuIcon}
               alt="More menu icon"
+              onClick={() => {
+                setTranslate(!translate);
+              }}
             />
           ) : (
             <img className="" src={getApiTypeIcon(data.type)} alt="" />
           )}
         </div>
+      </div>
+      <div
+        className={`flex items-center justify-center px-1 transition-transform duration-300 ease-in-out ${
+          translate ? "-translate-x-10" : "translate-x-0"
+        }`}
+      >
+        Hello
       </div>
     </div>
   );
