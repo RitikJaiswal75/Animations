@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ApiListProps } from "../types/apiListProps";
 import { getApiTypeIcon } from "../utils/iconEngine";
 import moreMenuIcon from "../assets/icons/dots-horizontal.svg";
@@ -11,6 +11,20 @@ const ApiList = ({ data }: ApiListProps) => {
   const [translate, setTranslate] = useState(false);
   const { showTags } = useStore();
   const container = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleHide = () => setTranslate(false);
+    window.addEventListener("mousedown", handleHide);
+    window.addEventListener("keydown", (e) => {
+      if (e.key.toLowerCase() === "escape") {
+        handleHide();
+      }
+    });
+    return () => {
+      window.removeEventListener("mousedown", handleHide);
+      window.removeEventListener("keydown", handleHide);
+    };
+  }, []);
 
   return (
     <div className="relative flex w-[240px] overflow-hidden rounded-sm border-1 border-slate-200 bg-slate-300 text-xs">
