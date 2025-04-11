@@ -11,7 +11,7 @@ const SearchResult = ({ api, index }: SearchResultProps) => {
   return (
     <div
       key={`${api.path}-${index}`}
-      className="text-search-text relative flex items-center justify-between px-2 py-3 transition-colors duration-500 ease-in-out hover:bg-slate-200"
+      className="text-search-text relative flex w-full items-center justify-between px-2 py-3 transition-colors duration-500 ease-in-out hover:bg-slate-200"
       onMouseEnter={() => setShowMoreMenu(true)}
       onMouseLeave={() => setShowMoreMenu(false)}
     >
@@ -32,7 +32,7 @@ const SearchResult = ({ api, index }: SearchResultProps) => {
             24 <img src={qpsIcon} alt="" className="inline-block" />
           </div>
         ) : null}
-        <div className="line-clamp-2 w-[85%] break-all">{api.path}</div>
+        <div className="line-clamp-2 w-[85%] flex-1 break-all">{api.path}</div>
       </div>
       <div className="flex h-4 w-[15%] flex-col items-end justify-center overflow-hidden">
         <img
