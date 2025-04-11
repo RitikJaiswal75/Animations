@@ -12,10 +12,10 @@ const ApiList = ({ data }: ApiListProps) => {
   const container = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="relative flex w-[240px] overflow-hidden rounded-sm border-1 border-slate-200 bg-slate-300 text-xs transition-all duration-300 ease-in">
+    <div className="relative flex w-[240px] overflow-hidden rounded-sm border-1 border-slate-200 bg-slate-300 text-xs">
       <div
         ref={container}
-        className={`flex w-full flex-shrink-0 items-center justify-between rounded-sm bg-white px-2 py-3 ${translate ? "-translate-x-10" : "translate-x-0"}`}
+        className={`flex w-full flex-shrink-0 items-center justify-between rounded-sm bg-white px-2 py-3 transition-transform duration-300 ease-in-out ${translate ? "-translate-x-10" : "translate-x-0"}`}
         onMouseEnter={() => setShowMoreMenu(true)}
         onMouseLeave={() => setShowMoreMenu(false)}
       >
