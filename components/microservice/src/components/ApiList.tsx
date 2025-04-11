@@ -28,19 +28,22 @@ const ApiList = ({ data }: ApiListProps) => {
           ) : null}
           <div className="line-clamp-2 flex-1 break-all">{data.path}</div>
         </div>
-        <div className="relative flex w-[15%] items-center justify-end">
-          {showMoreMenu ? (
-            <img
-              className="rounded-xs hover:bg-slate-200"
-              src={moreMenuIcon}
-              alt="More menu icon"
-              onClick={() => {
-                setTranslate(!translate);
-              }}
-            />
-          ) : (
-            <img className="" src={getApiTypeIcon(data.type)} alt="" />
-          )}
+        <div
+          className="relative flex w-[15%] cursor-pointer items-center justify-end rounded-xs"
+          onClick={() => {
+            setTranslate(!translate);
+          }}
+        >
+          <img
+            className={`absolute rounded-xs bg-slate-300 transition-opacity duration-300 ease-in-out ${showMoreMenu ? "opacity-100" : "opacity-0"}`}
+            src={moreMenuIcon}
+            alt="More menu icon"
+          />
+          <img
+            className={`transition-opacity duration-300 ease-in-out ${showMoreMenu ? "opacity-0" : "opacity-100"}`}
+            src={getApiTypeIcon(data.type)}
+            alt=""
+          />
         </div>
       </div>
       <div
