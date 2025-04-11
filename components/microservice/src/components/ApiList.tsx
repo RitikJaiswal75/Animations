@@ -3,9 +3,11 @@ import { ApiListProps } from "../types/apiListProps";
 import { getApiTypeIcon } from "../utils/iconEngine";
 import moreMenuIcon from "../assets/icons/dots-horizontal.svg";
 import Tags from "./Tags";
+import useStore from "./Store/store";
 
 const ApiList = ({ data }: ApiListProps) => {
   const [showMoreMenu, setShowMoreMenu] = useState(false);
+  const { showTags } = useStore();
   const container = useRef<HTMLDivElement>(null);
 
   return (
@@ -18,9 +20,11 @@ const ApiList = ({ data }: ApiListProps) => {
         onMouseLeave={() => setShowMoreMenu(false)}
       >
         <div className="flex w-[85%] items-center gap-2">
-          <div className="flex-shrink-0">
-            <Tags tagData={data.tags || []} />
-          </div>
+          {showTags ? (
+            <div className="flex-shrink-0">
+              <Tags tagData={data.tags || []} />
+            </div>
+          ) : null}
           <div className="line-clamp-2 flex-1 break-all">{data.path}</div>
         </div>
         <div className="relative flex w-[15%] items-center justify-end">
