@@ -23,6 +23,12 @@ const Tags = ({ tagData }: TagProps) => {
           </div>
         </div>
       ))}
+      {tagData.length > 2 && (
+        <div className="relative rounded-xs bg-slate-300 px-1 py-0.5 text-center text-slate-700">
+          <div className="absolute top-[30%] -left-1 h-2 w-2 rounded-full bg-slate-500"></div>
+          {tagData.length - 2} more
+        </div>
+      )}
     </div>
   );
 };

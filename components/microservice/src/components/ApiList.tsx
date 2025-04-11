@@ -17,7 +17,7 @@ const ApiList = ({ data }: ApiListProps) => {
         onMouseEnter={() => setShowMoreMenu(true)}
         onMouseLeave={() => setShowMoreMenu(false)}
       >
-        <div className="flex w-[85%] gap-2">
+        <div className="flex w-[85%] items-center gap-2">
           <div className="flex-shrink-0">
             <Tags tagData={data.tags || []} />
           </div>
