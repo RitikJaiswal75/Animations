@@ -9,7 +9,7 @@ function App() {
   const { showTags, setShowTags } = useStore();
   return (
     <div className="flex gap-4">
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center text-white">
         <div>
           <input
             type="checkbox"
@@ -29,7 +29,7 @@ function App() {
           }
         >
           {allowedServiceTypes.map((type, index) => (
-            <option key={index} value={type}>
+            <option key={index} value={type} className="text-black">
               {type}
             </option>
           ))}

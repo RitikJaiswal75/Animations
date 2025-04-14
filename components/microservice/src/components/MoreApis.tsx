@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { apiList } from "../mocks/dummyAPIData";
 import SearchApi from "./SearchApi";
+import useStore from "./Store/store";
 
 const MoreApis = () => {
   const [showMore, setShowMore] = useState(false);
+  const { apiList } = useStore();
   if (showMore) return <SearchApi setShowMore={setShowMore} />;
   return (
     <div>

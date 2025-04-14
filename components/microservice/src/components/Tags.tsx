@@ -1,7 +1,7 @@
 import { TagProps } from "../types/tagProps";
-import qpsIcon from "../assets/icons/qps.svg";
-import qpmIcon from "../assets/icons/qpm.svg";
 import Triangle from "./icons/Triangle";
+import Qpm from "./icons/Qpm";
+import Qps from "./icons/Qps";
 
 const Tags = ({ tagData }: TagProps) => {
   return (
@@ -9,22 +9,22 @@ const Tags = ({ tagData }: TagProps) => {
       {tagData.slice(0, 2).map((tag, index) => (
         <div
           key={index}
-          className="flex h-4 items-center justify-center gap-0.5 bg-slate-100 py-0.5 pl-1 text-xs text-slate-600"
+          className="text-tertiary flex h-4 items-center justify-center gap-0.5 rounded-xs bg-slate-100 py-0.5 pl-1 text-xs"
         >
           <div className="flex items-center justify-center gap-0.5 whitespace-nowrap">
-            24{" "}
-            <img
-              src={(index + 1) % 2 === 0 ? qpmIcon : qpsIcon}
-              alt=""
-              className="inline-block"
-            />
+            24
+            <div className="m-0 flex h-3 w-3 items-center justify-center">
+              {(index + 1) % 2 === 0 ? <Qpm /> : <Qps />}
+            </div>
           </div>
           <div
             className={`${
               Number(tag) > 0.4 ? "bg-red-100 text-red-400" : "text-slate-400"
             } flex items-center justify-center gap-0.5 pr-1 whitespace-nowrap`}
           >
-            <Triangle />
+            <div className="h-3 w-3">
+              <Triangle />
+            </div>
             <div>{tag}%</div>
           </div>
         </div>

@@ -17,6 +17,9 @@
   --color-outline-lambda: #ffb694;
   --color-outline-search-green: #83b800;
   --color-search-text: #98a2b3;
+
+  --color-tertiary: #868fa2;
+
   --bg-custom-microservice: linear-gradient(
     179.84deg,
     #e0f2ff 0.14%,

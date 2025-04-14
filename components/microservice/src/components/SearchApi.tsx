@@ -1,10 +1,11 @@
 import { useEffect, useRef } from "react";
-import { apiList } from "../mocks/dummyAPIData";
 import { SearchApiProps } from "../types/searchApiProps";
 import SearchResult from "./SearchResult";
+import useStore from "./Store/store";
 
 const SearchApi = ({ setShowMore }: SearchApiProps) => {
   const containerRef = useRef<HTMLInputElement>(null);
+  const { apiList } = useStore();
   useEffect(() => {
     const handleHide = () => setShowMore(false);
     containerRef.current?.focus();
