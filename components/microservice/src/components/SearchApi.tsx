@@ -47,7 +47,11 @@ const SearchApi = ({ setShowMore }: SearchApiProps) => {
         }}
       >
         {apiList.slice(3).map((api, index) => (
-          <SearchResult api={api} index={index} key={`${api.path}-${index}`} />
+          <SearchResult
+            api={api}
+            index={index + 3}
+            key={`${api.path}-${index + 3}`}
+          />
         ))}
       </div>
     </div>
