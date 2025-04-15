@@ -19,7 +19,7 @@ const SearchResult = ({ api, index }: SearchResultProps) => {
         {showTags ? <TagV2 showMoreMenu={showMoreMenu} /> : null}
         <div className="line-clamp-2 w-[85%] flex-1 break-all">{api.path}</div>
       </div>
-      <div className="flex h-4 w-[15%] flex-col items-end justify-center overflow-hidden">
+      <div className="flex h-4 w-[15%] flex-shrink-0 flex-col items-end justify-center overflow-hidden">
         {showMoreMenu ? (
           <img
             className="h-6 w-6 cursor-pointer rounded-sm px-1"
