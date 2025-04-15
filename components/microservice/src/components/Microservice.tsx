@@ -36,7 +36,7 @@ const Microservice = ({
       </div>
       <div className="flex flex-col gap-1">
         {apiList.slice(0, 3).map((api, index) => (
-          <ApiList key={`${api.path}_${index}`} data={api} />
+          <ApiList key={`${api.path}_${index}`} data={api} index={index} />
         ))}
         {apiList.length > 3 ? <MoreApis /> : null}
       </div>
