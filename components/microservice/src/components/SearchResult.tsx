@@ -3,7 +3,7 @@ import addIcon from "../assets/icons/plus-circle.svg";
 import { getApiTypeIcon } from "../utils/iconEngine";
 import { SearchResultProps } from "../types/searchResultProps";
 import useStore from "./Store/store";
-import Qps from "./icons/Qps";
+import TagV2 from "./TagV2";
 
 const SearchResult = ({ api, index }: SearchResultProps) => {
   const [showMoreMenu, setShowMoreMenu] = useState(false);
@@ -16,25 +16,7 @@ const SearchResult = ({ api, index }: SearchResultProps) => {
       onMouseLeave={() => setShowMoreMenu(false)}
     >
       <div className="flex gap-1">
-        {showTags ? (
-          <div
-            className="flex flex-shrink-0 items-center justify-center gap-0.5 rounded-xs bg-slate-100 px-1 whitespace-nowrap transition-colors duration-150"
-            ref={(el) => {
-              if (showMoreMenu) {
-                el?.classList.remove("bg-slate-100");
-                el?.classList.add("bg-white");
-              } else {
-                el?.classList.add("bg-slate-100");
-                el?.classList.remove("bg-white");
-              }
-            }}
-          >
-            24
-            <div className="flex h-3 w-3 items-center justify-center">
-              <Qps />
-            </div>
-          </div>
-        ) : null}
+        {showTags ? <TagV2 showMoreMenu={showMoreMenu} /> : null}
         <div className="line-clamp-2 w-[85%] flex-1 break-all">{api.path}</div>
       </div>
       <div className="flex h-4 w-[15%] flex-col items-end justify-center overflow-hidden">

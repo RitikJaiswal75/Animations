@@ -1,10 +1,11 @@
 import { MicroserviceProps } from "../types/microserviceprops";
-import { getIcon, getServiceTypeIcon } from "../utils/iconEngine";
+import { getServiceTypeIcon } from "../utils/iconEngine";
 import minimizeIcon from "../assets/icons/minimize.svg";
 import { getServiceTheme } from "../utils/themeEngine";
 import ApiList from "./ApiList";
 import MoreApis from "./MoreApis";
 import useStore from "./Store/store";
+import ServiceIcons from "./ServiceIcons";
 
 const Microservice = ({
   serviceTitle,
@@ -31,19 +32,7 @@ const Microservice = ({
             {serviceTitle}
           </div>
         </div>
-        {icons && icons.length ? (
-          <div
-            className={`border-[0.5px] ${theme.border} flex gap-2 rounded-full bg-white px-2 py-0.5`}
-          >
-            {icons.map((icon, index) => (
-              <img
-                src={getIcon(icon)}
-                alt={`${icon} icon`}
-                key={`${icon}_${index}`}
-              />
-            ))}
-          </div>
-        ) : null}
+        <ServiceIcons icons={icons} theme={theme} />
       </div>
       <div className="flex flex-col gap-1">
         {apiList.slice(0, 3).map((api, index) => (
